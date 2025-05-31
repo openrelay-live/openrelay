@@ -56,3 +56,21 @@ navLinks.forEach(link => {
         link.classList.add('active');
     }
 });
+// Hamburger menu for mobile nav
+const hamburger = document.getElementById('hamburger');
+const mainNav = document.getElementById('main-nav');
+if (hamburger && mainNav) {
+    hamburger.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    // Close nav on link click (mobile UX)
+    mainNav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 900) {
+                mainNav.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+}

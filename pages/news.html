@@ -10,7 +10,10 @@
 <body>
     <header class="top-bar top-navbar">
         <a href="/index.html" class="logo">OpenRelay</a>
-        <nav class="main-nav main-nav-horizontal">
+        <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav main-nav-horizontal" id="main-nav">
             <a href="/index.html" class="nav-link">Home</a>
             <a href="/pages/projects.html" class="nav-link">Projects</a>
             <a href="/pages/tutorials.html" class="nav-link">Tutorials</a>
@@ -20,7 +23,6 @@
             <a href="/pages/contact.html" class="nav-link">Contact</a>
         </nav>
         <nav class="utility-nav">
-            <input type="text" id="search" placeholder="Search..." aria-label="Search">
             <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
         </nav>
     </header>
@@ -36,7 +38,6 @@
             <a href="#">Privacy Policy</a>
             <a href="#">Newsletter</a>
             <a href="https://github.com/" target="_blank">GitHub</a>
-            <a href="#">Contact</a>
         </div>
         <form class="newsletter-form">
             <label for="newsletter-email">Subscribe to our newsletter:</label>

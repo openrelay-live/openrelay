@@ -10,7 +10,10 @@
 <body>
     <header class="top-bar top-navbar">
         <a href="/index.html" class="logo">OpenRelay</a>
-        <nav class="main-nav main-nav-horizontal">
+        <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav main-nav-horizontal" id="main-nav">
             <a href="/pages/news.html" class="nav-link">News</a>
             <a href="/pages/projects.html" class="nav-link">Projects</a>
             <a href="/pages/tutorials.html" class="nav-link">Tutorials</a>
@@ -20,7 +23,6 @@
             <a href="/pages/contact.html" class="nav-link">Contact</a>
         </nav>
         <nav class="utility-nav">
-            <input type="text" id="search" placeholder="Search..." aria-label="Search">
             <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
         </nav>
     </header>
@@ -28,6 +30,39 @@
         <section class="home-section">
             <h1>Welcome to OpenRelay</h1>
             <p>Your open, developer-focused community hub.</p>
+        </section>
+        <section class="newsletter-showcase">
+            <h2>Featured LinkedIn Newsletters</h2>
+            <div class="newsletter-grid">
+                <div class="newsletter-card">
+                    <img src="/assets/newsletter1.png" alt="Jira & Beyond Logo" class="newsletter-logo">
+                    <h3>Jira & Beyond</h3>
+                    <p class="newsletter-desc">News, tips, and updates from across the Atlassian suite.</p>
+                    <div class="newsletter-meta">Published weekly</div>
+                    <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7315821386214621186" target="_blank" class="subscribe-btn">Subscribe on LinkedIn</a>
+                </div>
+                <div class="newsletter-card">
+                    <img src="/assets/newsletter2.png" alt="Queuil Logo" class="newsletter-logo">
+                    <h3>Queuil</h3>
+                    <p class="newsletter-desc">Tech News, Reimagined</p>
+                    <div class="newsletter-meta">Published daily</div>
+                    <a href="#" target="_blank" class="subscribe-btn">Subscribe on LinkedIn</a>
+                </div>
+                <div class="newsletter-card">
+                    <img src="/assets/newsletter3.png" alt="The Cloud Compass Logo" class="newsletter-logo">
+                    <h3>The Cloud Compass</h3>
+                    <p class="newsletter-desc">Your guide to the latest in AWS, cloud updates, and best practices.</p>
+                    <div class="newsletter-meta">Published biweekly</div>
+                    <a href="#" target="_blank" class="subscribe-btn">Subscribe on LinkedIn</a>
+                </div>
+                <div class="newsletter-card">
+                    <img src="/assets/newsletter4.png" alt="CRM Forge Logo" class="newsletter-logo">
+                    <h3>CRM Forge</h3>
+                    <p class="newsletter-desc">Shaping Salesforce success with insights, trends, and strategies.</p>
+                    <div class="newsletter-meta">Published biweekly</div>
+                    <a href="#" target="_blank" class="subscribe-btn">Subscribe on LinkedIn</a>
+                </div>
+            </div>
         </section>
     </main>
     <footer>

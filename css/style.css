@@ -1,4 +1,5 @@
 /* style.css - OpenRelay Stage 1 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 :root {
     --primary: #2563eb;
     --background: #f9fafb;
@@ -22,13 +23,31 @@
     padding: 0;
 }
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
     background: var(--background);
     color: var(--foreground);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     transition: background var(--transition), color var(--transition);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5em;
+}
+p, a, li, label, input, textarea, button {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
 }
 .top-bar {
     display: flex;
@@ -111,7 +130,7 @@ body {
 .nav-link {
     color: var(--foreground);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
     transition: background var(--transition), color var(--transition);
@@ -121,9 +140,7 @@ body {
     color: #fff;
 }
 .main-nav-horizontal .nav-link {
-    color: var(--foreground);
-    text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: background var(--transition), color var(--transition);
@@ -282,6 +299,90 @@ footer {
 .contact-form button[type="submit"]:hover {
     background: #1741a6;
 }
+.newsletter-showcase {
+    margin: 2.5rem 0 2rem 0;
+    text-align: center;
+}
+.newsletter-showcase h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+.newsletter-grid {
+    display: flex;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+.newsletter-card {
+    flex: 1 1 0;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--sidebar-border);
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    padding: 2rem 1rem 1.5rem 1rem;
+    transition: box-shadow 0.2s;
+}
+.newsletter-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--primary);
+}
+.newsletter-logo {
+    align-self: center;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background: #f3f4f6;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.newsletter-desc {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    font-size: 0.98em;
+    color: var(--foreground);
+    min-height: 48px;
+}
+.newsletter-meta {
+    font-size: 0.92em;
+    color: #666;
+    margin-bottom: 0.7rem;
+    font-style: italic;
+}
+.subscribe-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    min-height: 48px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.subscribe-btn:hover {
+    background: #1741a6;
+}
 @media (max-width: 900px) {
     .sidebar {
         width: 60px;
@@ -293,13 +394,14 @@ footer {
         text-align: center;
     }
     main#main-content {
-        margin-left: 60px;
-        padding: 1rem;
+        margin-left: 0;
+        padding: 1rem 0.5rem;
     }
     .main-nav-horizontal {
         gap: 1rem;
         margin-left: 0;
         justify-content: center;
+        flex-wrap: wrap;
     }
     .top-bar.top-navbar {
         flex-direction: column;
@@ -310,6 +412,11 @@ footer {
     .utility-nav {
         margin-left: 0;
         justify-content: center;
+    }
+    .logo {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        text-align: center;
     }
 }
 @media (max-width: 600px) {
@@ -343,5 +450,60 @@ footer {
     }
     .contact-section {
         padding: 1rem 0.5rem;
+    }
+    .modal {
+        min-width: 90vw;
+        padding: 1rem 0.5rem;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+}
+@media (max-width: 1000px) {
+    .newsletter-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .newsletter-card {
+        min-width: 0;
+    }
+}
+/* Hamburger menu for mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+.hamburger span {
+    height: 4px;
+    width: 100%;
+    background: var(--foreground);
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex;
+    }
+    .main-nav-horizontal {
+        display: none !important;
+        flex-direction: column !important;
+        background: var(--sidebar-bg);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        z-index: 20;
+    }
+    .main-nav-horizontal.open {
+        display: flex !important;
     }
 }
