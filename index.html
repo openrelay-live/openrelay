@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRelay</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/main.js"></script>
+</head>
+<body>
+    <header class="top-bar top-navbar">
+        <a href="/index.html" class="logo">OpenRelay</a>
+        <nav class="main-nav main-nav-horizontal">
+            <a href="/pages/news.html" class="nav-link">News</a>
+            <a href="/pages/projects.html" class="nav-link">Projects</a>
+            <a href="/pages/tutorials.html" class="nav-link">Tutorials</a>
+            <a href="/pages/events.html" class="nav-link">Events</a>
+            <a href="/pages/community.html" class="nav-link">Community</a>
+            <a href="/pages/about.html" class="nav-link">About</a>
+            <a href="/pages/contact.html" class="nav-link">Contact</a>
+        </nav>
+        <nav class="utility-nav">
+            <input type="text" id="search" placeholder="Search..." aria-label="Search">
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </nav>
+    </header>
+    <main id="main-content">
+        <section class="home-section">
+            <h1>Welcome to OpenRelay</h1>
+            <p>Your open, developer-focused community hub.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Newsletter</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+        </div>
+        <form class="newsletter-form">
+            <label for="newsletter-email">Subscribe to our newsletter:</label>
+            <input type="email" id="newsletter-email" placeholder="Your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </footer>
+    <!-- Modals -->
+    <div id="modal-overlay" class="hidden"></div>
+</body>
+</html>
