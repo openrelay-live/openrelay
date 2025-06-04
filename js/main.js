@@ -1,14 +1,26 @@
 // main.js - OpenRelay Stage 1
 // Theme toggle
 const themeToggle = document.getElementById('theme-toggle');
+const logoImg = document.getElementById('logo-img');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const userTheme = localStorage.getItem('theme');
+function updateLogo(theme) {
+    if (logoImg) {
+        logoImg.src = theme === 'dark'
+            ? 'https://github.com/hrudu-dev/openrelay/raw/main/assets/logo-light.png'
+            : 'https://github.com/hrudu-dev/openrelay/raw/main/assets/logo-dark.png';
+    }
+}
 if (userTheme) {
     document.documentElement.setAttribute('data-theme', userTheme);
     themeToggle.textContent = userTheme === 'dark' ? '☀️' : '🌙';
+    updateLogo(userTheme);
 } else if (prefersDark) {
     document.documentElement.setAttribute('data-theme', 'dark');
     themeToggle.textContent = '☀️';
+    updateLogo('dark');
+} else {
+    updateLogo('light');
 }
 themeToggle.addEventListener('click', () => {
     const current = document.documentElement.getAttribute('data-theme') || 'light';
@@ -16,6 +28,7 @@ themeToggle.addEventListener('click', () => {
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
     themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+    updateLogo(next);
 });
 // Modal logic
 const modalOverlay = document.getElementById('modal-overlay');
