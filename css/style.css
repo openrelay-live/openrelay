@@ -61,7 +61,6 @@ p, a, li, label, input, textarea, button {
     z-index: 10;
 }
 .top-bar.top-navbar {
-    display: flex;
     flex-direction: row !important;
     align-items: center;
     justify-content: space-between;
@@ -72,6 +71,7 @@ p, a, li, label, input, textarea, button {
     top: 0;
     z-index: 10;
     gap: 2rem;
+    width: 100%;
 }
 .logo {
     font-size: 1.5rem;
@@ -102,16 +102,19 @@ p, a, li, label, input, textarea, button {
     color: var(--foreground);
     transition: color var(--transition);
 }
-.sidebar {
+.sidebar.main-nav {
     width: 220px;
     background: var(--sidebar-bg);
     border-right: 1px solid var(--sidebar-border);
     min-height: 100vh;
     position: fixed;
-    top: 64px;
+    top: 0;
     left: 0;
-    padding-top: 2rem;
+    padding-top: 5.5rem; /* below header */
     z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     transition: background var(--transition);
 }
 .main-nav {
@@ -120,7 +123,7 @@ p, a, li, label, input, textarea, button {
     gap: 1.5rem;
 }
 .main-nav-horizontal {
-    display: flex !important;
+    display: none !important;
     flex-direction: row !important;
     gap: 2rem;
     align-items: center;
@@ -312,13 +315,21 @@ footer {
 .newsletter-grid {
     display: flex;
     gap: 2rem;
-    max-width: 1100px;
+    max-width: 100%; /* Allow full width for 4 cards */
     margin: 0 auto;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
     align-items: stretch;
+    justify-content: center; /* Center the cards horizontally */
+}
+@media (max-width: 1200px) {
+    .newsletter-grid {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        max-width: 1100px;
+    }
 }
 .newsletter-card {
-    flex: 1 1 0;
+    flex: 0 1 260px; /* Prevents cards from stretching too much */
+    max-width: 300px;
     min-width: 220px;
     display: flex;
     flex-direction: column;
@@ -330,6 +341,7 @@ footer {
     box-shadow: 0 2px 12px rgba(0,0,0,0.04);
     padding: 2rem 1rem 1.5rem 1rem;
     transition: box-shadow 0.2s;
+    margin-bottom: 1rem;
 }
 .newsletter-card h3 {
     font-size: 1.2rem;
@@ -384,126 +396,19 @@ footer {
     background: #1741a6;
 }
 @media (max-width: 900px) {
-    .sidebar {
-        width: 60px;
-        padding-top: 1rem;
-    }
-    .main-nav .nav-link {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.7rem;
-        text-align: center;
-    }
-    main#main-content {
-        margin-left: 0;
-        padding: 1rem 0.5rem;
-    }
-    .main-nav-horizontal {
-        gap: 1rem;
-        margin-left: 0;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .top-bar.top-navbar {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.5rem;
-        padding: 0.7rem 1rem;
-    }
-    .utility-nav {
-        margin-left: 0;
-        justify-content: center;
-    }
-    .logo {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-        text-align: center;
-    }
-}
-@media (max-width: 600px) {
-    .top-bar {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.7rem 1rem;
-    }
-    .sidebar {
-        display: none;
-    }
-    main#main-content {
-        margin-left: 0;
-        padding: 1rem 0.5rem;
-    }
-    footer {
-        padding: 1rem 0.5rem;
-    }
-    .main-nav-horizontal {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-    }
-    .top-bar.top-navbar {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.7rem 0.5rem;
-    }
-    .utility-nav input[type="text"] {
-        min-width: 100px;
-    }
-    .contact-section {
-        padding: 1rem 0.5rem;
-    }
-    .modal {
-        min-width: 90vw;
-        padding: 1rem 0.5rem;
-    }
-    .footer-links {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
-    }
-}
-@media (max-width: 1000px) {
-    .newsletter-grid {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .newsletter-card {
-        min-width: 0;
-    }
-}
-/* Hamburger menu for mobile */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    margin-left: 1rem;
-}
-.hamburger span {
-    height: 4px;
-    width: 100%;
-    background: var(--foreground);
-    margin: 4px 0;
-    border-radius: 2px;
-    transition: all 0.3s;
-}
-@media (max-width: 900px) {
-    .hamburger {
-        display: flex;
-    }
-    .main-nav-horizontal {
-        display: none !important;
-        flex-direction: column !important;
-        background: var(--sidebar-bg);
-        position: absolute;
-        top: 60px;
-        left: 0;
+    .sidebar.main-nav {
         width: 100vw;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        z-index: 20;
+        min-height: auto;
+        position: static;
+        flex-direction: row;
+        gap: 1rem;
+        padding-top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--sidebar-border);
+        justify-content: center;
     }
-    .main-nav-horizontal.open {
-        display: flex !important;
+    main#main-content {
+        margin-left: 0;
+        padding: 1rem 0.5rem;
     }
 }
