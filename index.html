@@ -3,83 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenRelay</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <script defer src="/js/main.js"></script>
+    <title>OpenRelay – Coming Soon</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .coming-soon-container {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            width: 100%;
+            max-width: 350px;
+        }
+        .coming-soon-logo {
+            margin-bottom: 2rem;
+            max-width: 140px;
+            width: 60vw;
+            height: auto;
+            filter: drop-shadow(0 2px 12px #4f8cff44);
+        }
+        .coming-soon-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #4f8cff 30%, #00e6d0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .coming-soon-desc {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+        .coming-soon-footer {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #bbb;
+        }
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 0 auto;
+        }
+        .newsletter-form input[type="email"] {
+            padding: 0.5rem;
+            border-radius: 0.4rem;
+            border: none;
+            width: 100%;
+            font-size: 1rem;
+        }
+        .newsletter-form button {
+            padding: 0.5rem;
+            border-radius: 0.4rem;
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        @media (max-width: 480px) {
+            .coming-soon-container {
+                padding: 1.2rem 0.5rem;
+                max-width: 98vw;
+            }
+            .coming-soon-title {
+                font-size: 1.5rem;
+            }
+            .coming-soon-logo {
+                max-width: 90px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="top-bar top-navbar">
-        <a href="/index.html" class="logo">
-            <img src="https://github.com/hrudu-dev/openrelay/raw/main/assets/logo-light.png" alt="OpenRelay Logo" id="logo-img" height="48" />
-        </a>
-        <div class="utility-nav">
-            <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">
-                <span></span><span></span><span></span>
-            </button>
-            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-        </div>
-    </header>
-    <nav class="sidebar main-nav" id="main-nav">
-        <a href="/pages/news.html" class="nav-link">News</a>
-        <a href="/pages/tutorials.html" class="nav-link">Tutorials</a>
-        <a href="/pages/events.html" class="nav-link">Events</a>
-        <a href="/pages/community.html" class="nav-link">Community</a>
-        <a href="/pages/about.html" class="nav-link">About</a>
-        <a href="/pages/contact.html" class="nav-link">Contact</a>
-    </nav>
-    <main id="main-content">
-        <section class="home-section">
-            <h1>Welcome to OpenRelay</h1>
-            <p>Your open, developer-focused community hub.</p>
-        </section>
-        <section class="newsletter-showcase">
-            <h2>Featured LinkedIn Newsletters</h2>
-            <div class="newsletter-grid">
-                <div class="newsletter-card">
-                    <img src="/assets/newsletter1.png" alt="Jira & Beyond Logo" class="newsletter-logo">
-                    <h3>Jira & Beyond</h3>
-                    <p class="newsletter-desc">News, tips, and updates from across the Atlassian suite.</p>
-                    <div class="newsletter-meta">Published weekly</div>
-                    <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7315821386214621186" target="_blank" class="subscribe-btn">Subscribe on LinkedIn</a>
-                </div>
-                <div class="newsletter-card">
-                    <img src="/assets/newsletter2.png" alt="Queuil Logo" class="newsletter-logo">
-                    <h3>Queuil</h3>
-                    <p class="newsletter-desc">Tech News, Reimagined</p>
-                    <div class="newsletter-meta">Published daily</div>
-                    <a href="#" target="_blank" class="subscribe-btn">Subscribe on LinkedIn</a>
-                </div>
-                <div class="newsletter-card">
-                    <img src="/assets/newsletter3.png" alt="The Cloud Compass Logo" class="newsletter-logo">
-                    <h3>The Cloud Compass</h3>
-                    <p class="newsletter-desc">Your guide to the latest in AWS, cloud updates, and best practices.</p>
-                    <div class="newsletter-meta">Published biweekly</div>
-                    <a href="#" target="_blank" class="subscribe-btn">Subscribe on LinkedIn</a>
-                </div>
-                <div class="newsletter-card">
-                    <img src="/assets/newsletter4.png" alt="CRM Forge Logo" class="newsletter-logo">
-                    <h3>CRM Forge</h3>
-                    <p class="newsletter-desc">Shaping Salesforce success with insights, trends, and strategies.</p>
-                    <div class="newsletter-meta">Published biweekly</div>
-                    <a href="#" target="_blank" class="subscribe-btn">Subscribe on LinkedIn</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-links">
-            <a href="#">Terms of Service</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Newsletter</a>
-            <a href="https://github.com/" target="_blank">GitHub</a>
-        </div>
+    <div class="coming-soon-container">
+        <img src="https://github.com/hrudu-dev/openrelay/raw/main/assets/logo-light.png" alt="OpenRelay Logo" class="coming-soon-logo" />
+        <div class="coming-soon-title">Coming Soon</div>
+        <div class="coming-soon-desc">We're working on something great.<br>Stay tuned!</div>
         <form class="newsletter-form">
-            <label for="newsletter-email">Subscribe to our newsletter:</label>
             <input type="email" id="newsletter-email" placeholder="Your email" required>
-            <button type="submit">Subscribe</button>
+            <button type="submit">Notify Me</button>
         </form>
-    </footer>
-    <!-- Modals -->
-    <div id="modal-overlay" class="hidden"></div>
+        <div class="coming-soon-footer">&copy; 2025 OpenRelay</div>
+    </div>
 </body>
 </html>
