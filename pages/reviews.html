@@ -13,7 +13,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center" href="/index.html" style="color:#4b7ceb;">
-        <img src="/assets/images/logo.png" alt="OpenRelay Logo" style="height:32px;width:auto;margin-right:8px;">
+        <img src="/assets/images/logo.png" alt="OpenRelay Logo" style="height:48px;width:auto;margin-right:8px;">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,9 +37,50 @@
     <div class="alert alert-info">Reviews of tools, SaaS, and hardware will appear here. (Coming soon!)</div>
   </main>
   <!-- Footer -->
-  <footer class="text-center py-4" style="background:#000; color:#fff;">
+  <footer class="text-center py-5" style="background:#000; color:#fff;">
     <div class="container">
-      <small>&copy; 2024 OpenRelay. All rights reserved.</small>
+      <div class="row justify-content-center align-items-start mt-5 p-4 rounded" style="background:rgba(255,255,255,0.04);max-width:900px;margin:auto;box-shadow:0 2px 12px rgba(0,0,0,0.12);">
+        <div class="col-12 col-md-6 mb-4 mb-md-0 text-start">
+          <h5 class="mb-3 text-center text-md-start" style="color:#4b7ceb;">Contact Us</h5>
+          <form action="#" method="post">
+            <div class="mb-3">
+              <input type="text" class="form-control bg-dark text-white border-0" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control bg-dark text-white border-0" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control bg-dark text-white border-0" name="message" rows="2" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn w-100" style="background:#4b7ceb;color:#fff;font-weight:600;">Send</button>
+          </form>
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+          <h6 class="mb-2 text-center" style="color:#fa7aac;">Sign up for our Newsletter</h6>
+          <form action="#" method="post" class="w-100" style="max-width:400px;">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control bg-dark text-white border-0" name="newsletter_email" placeholder="Your Email Address" required>
+              <button class="btn" type="submit" style="background:#fa7aac;color:#fff;font-weight:600;">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+          <div class="mb-2 mb-md-0">
+            <span style="color:#fa7aac;font-weight:600;">Follow us:</span>
+            <a href="#" class="ms-2 text-white-50 text-decoration-none"><i class="bi bi-twitter"></i>Twitter</a>
+            <a href="#" class="ms-2 text-white-50 text-decoration-none"><i class="bi bi-facebook"></i>Facebook</a>
+            <a href="#" class="ms-2 text-white-50 text-decoration-none"><i class="bi bi-github"></i>GitHub</a>
+          </div>
+          <div>
+            <a href="#" class="text-white-50 text-decoration-none mx-2">Legal</a>
+            <a href="#" class="text-white-50 text-decoration-none mx-2">Privacy Policy</a>
+            <a href="#" class="text-white-50 text-decoration-none mx-2">Terms & Conditions</a>
+          </div>
+        </div>
+        <small class="d-block mt-4" style="color:#bbb;">&copy; 2024 OpenRelay. All rights reserved.</small>
+      </div>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
